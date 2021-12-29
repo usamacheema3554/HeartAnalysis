@@ -1,0 +1,115 @@
+---
+title: "heartrate"
+output: html_document
+---
+18f0371 Talha Zafar
+18f0444 Irfan shehzad
+17F8156 Tooba Ijaz
+```{r setup, include=FALSE}
+
+
+df=read.csv('C:/Users/Talha/Downloads/heart.csv')
+
+a=df[which(df$age!='na'),]
+
+a=df[which(df$sex!='na'),]
+
+a=a[which(a$cp!='na'),]
+a=a[which(a$trestbps!='na'),]
+a=a[which(a$chol!='na'),]
+a=a[which(a$fbs!='na'),]
+a=a[which(a$restecg!='na'),]
+a=a[which(a$thalach!='na'),]
+a=a[which(a$exang!='na'),]
+a=a[which(a$oldpeak!='na'),]
+a=a[which(a$slope!='na'),]
+a=a[which(a$ca!='na'),]
+a=a[which(a$thal!='na'),]
+a=a[which(a$target!='na'),]
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+# a=a[which(a$age!='NaN'),]
+# a=a[which(a$sex!='NaN'),]
+# a=a[which(a$cp!='NaN'),]
+# a=a[which(a$trestbps!='NaN'),]
+# a=a[which(a$chol!='NaN'),]
+# a=a[which(a$fbs!='NaN'),]
+# a=a[which(a$restecg!='NaN'),]
+# a=a[which(a$thalach!='NaN'),]
+# a=a[which(a$exang!='NaN'),]
+# a=a[which(a$oldpeak!='NaN'),]
+# a=a[which(a$slope!='NaN'),]
+# a=a[which(a$ca!='NaN'),]
+# a=a[which(a$thal!='NaN'),]
+# a=a[which(a$target!='NaN'),]
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+seperate the male and female
+seperate the high chest values
+sperate the high male and female age 
+
+
+```{r pressure, echo=FALSE}
+#seperate the male and female
+
+male=df[which(df$sex!=0),]
+female=df[which(df$sex!=1),]
+male
+female
+
+
+
+```
+
+
+```{r pressure, echo=FALSE}
+high_cp_male=df[which(df$cp==3),]
+high_cp_female=df[which(df$cp==3),]
+high_cp_age_male
+high_cp_female
+```
+
+
+```{r pressure, echo=FALSE}
+high_age_male=male[which(male$ï..age>60),]
+high_age_female=female[which(female$ï..age>55),]
+
+
+high_age_female
+high_age_male
+
+```
+
+
+```{r pressure, echo=FALSE}
+
+
+
+high_chol_male=male[which(male$chol>300),]
+high_chol_female=female[which(female$chol>300),]
+
+high_chol_female
+high_chol_male
+
+
+```
+
+
+```{r pressure, echo=FALSE}
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
